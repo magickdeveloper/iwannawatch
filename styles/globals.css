@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* width */
+.scrollBarCard::-webkit-scrollbar {
+   @apply w-2;
+  }
+  
+  /* Track */
+  .scrollBarCard::-webkit-scrollbar-track{
+    @apply bg-[#f1f1f1];
+  }
+  
+  /* Handle */
+  .scrollBarCard::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
+  }
+  
+  /* Handle on hover */
+  .scrollBarCard::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#555];
+  }

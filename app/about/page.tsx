@@ -1,9 +1,16 @@
-import { title } from "@/components/primitives";
-
 export default function AboutPage() {
-	return (
-		<div>
-			<h1 className={title()}>About</h1>
-		</div>
-	);
+  return (
+    <div className="text-2xl">
+      <p>This page was created for practical purposes</p>
+      <p>
+        All content is from{" "}
+        <a
+          className="text-secondary"
+          href="https://rapidapi.com/SAdrian/api/moviesdatabase"
+        >
+          MoviesDatabase API
+        </a>
+      </p>
+    </div>
+  );
 }
