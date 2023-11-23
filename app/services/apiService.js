@@ -10,9 +10,12 @@ export default function useFetch({ url, params = {}, method = "GET" }) {
     url: url,
     params: params,
     headers: {
-      "X-RapidAPI-Key": NEXT_PUCLIC_API_KEY,
+      "X-RapidAPI-Key": process.env.NEXT_PUCLIC_API_KEY,
       "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
     },
+  };
+  const clearData = () => {
+    setData(null);
   };
 
   useEffect(() => {
@@ -29,5 +32,5 @@ export default function useFetch({ url, params = {}, method = "GET" }) {
       }
     })();
   }, [url]);
-  return { data, status, loading, setData };
+  return { data, status, loading, clearData };
 }

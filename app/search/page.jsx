@@ -20,7 +20,7 @@ const page = () => {
   const [search, setSearch] = useState(searchWithLimit);
   const router = useRouter();
   const [movies, setMovies] = useState([]);
-  let { data, status, loading, setData } = useFetch({
+  let { data, status, loading, clearData } = useFetch({
     url: searchBy(search),
   });
   useEffect(() => {
@@ -30,7 +30,7 @@ const page = () => {
   useEffect(() => {
     if (!data) return;
     setMovies((prev) => [...prev, data]);
-    setData(null); //improves performance
+    clearData(); //improves performance
   }, [data]);
 
   if (!searchParams.get("q")) router.push("/");
